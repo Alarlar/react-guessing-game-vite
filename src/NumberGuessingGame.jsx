@@ -5,6 +5,7 @@
 
 import React, { useState } from "react";
 import GuessControl from "./GuessControl";
+import GuessMessage from "./GuessMessage";
 import GameOver from "./GameOver";
 
 const MAX_ATTEMPTS = 5;
@@ -12,7 +13,7 @@ const MAX_ATTEMPTS = 5;
 const NumberGuessingGame = () => {
       const [numberToGuess, setNumberToGuess] = useState (getRandomNumber());
       const [numberOfGuesses, setNumberOfGuess] = useState(0);
-      const [latestGuess, setCurrentGuess] = useState(null);
+      const [latestGuess, setlatestGuess] = useState(null);
 
       function getRandomNumber() {
         return Math.floor(Math.random() * 100) + 1;
@@ -30,7 +31,7 @@ const NumberGuessingGame = () => {
     };
 
     const isGameOver =
-      numberOfGuesses >= MAX_ATTEMPTS || latestGuess === numberToGuesses;
+      numberOfGuesses >= MAX_ATTEMPTS || latestGuess === numberToGuess;
     const isCorrectGuess = latestGuess === numberToGuess;
 
     return (
